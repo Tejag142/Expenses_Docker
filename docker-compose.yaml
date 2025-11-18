@@ -10,7 +10,7 @@ services:
     image: teja142/backend:v1
     container_name: backend
     depends_on:
-    - mysql
+    - database
   frontend:
     image: teja142/frontend:v1
     container_name: frontend
