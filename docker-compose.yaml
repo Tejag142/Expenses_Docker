@@ -1,0 +1,20 @@
+networks:
+  default:
+    driver: bridge
+    name: expense
+services:
+  database:
+    image: teja142/database:v1
+    container_name: database
+  backend:
+    image: teja142/backend:v1
+    container_name: backend
+    depends_on:
+    - mysql
+  frontend:
+    image: teja142/frontend:v1
+    container_name: frontend
+    ports:
+    - "80:80"
+    depends_on:
+    - backend
